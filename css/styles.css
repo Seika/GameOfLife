@@ -1,0 +1,32 @@
+.cell {
+	width: 20px;
+	height: 20px;
+	border-radius: 6px;
+	border: 2px solid black;
+	font-size: 10px;
+	text-align: center;
+	float: left;
+	margin: 1px;
+	cursor: pointer;
+}
+
+.cellrow {
+	line-height: 20px;
+}
+
+.alive {
+	background: green;
+}
+
+.spacer {
+    margin-bottom: 15px;
+}
+
+#startButton, #stopButton, #resetButton {
+	width: 80px;
+}
+
+#gridContainer {
+	width: 650px; 
+	margin: 0 auto;
+}
