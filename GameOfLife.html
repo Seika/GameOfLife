@@ -53,6 +53,7 @@
 		<script type="text/javascript" src="ext/bootstrap/js/bootstrap.js"></script> 
 		<script type="text/javascript" src="ext/mediator/mediator.js"></script>
 		<script type="text/javascript" src="ext/tempo/tempo.js"></script> 
+		<script type="text/javascript" src="ext/namespace/namespace.js"></script>
 		<script type="text/javascript" src="js/gridModel.js"></script>
 		<script type="text/javascript" src="js/gridController.js"></script>
 		
@@ -63,11 +64,14 @@
 					gridController,
 					gridData;
 				
-				gridController = new GridController(width, height, 200, '#gridContainer');
-				gridController.bindButtons();
-				gridData = gridController.gridData();
+				jQuery.noConflict();
+				
+				gridController = new GameOfLife.Controllers.GridController(width, height, 200, '#gridContainer');
+				gridData = gridController.exportData();
+				
 				Tempo.prepare('gridContainer').render(gridData);
-				gridController.bindCells();
+				
+				gridController.initializeControls();
 			});
 		</script>
 	</body>
