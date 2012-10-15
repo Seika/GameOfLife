@@ -30,20 +30,24 @@ The following external libraries were used to simplify the development of the ap
 #### Model
 The model implements all the logic and rules of the Game Of Life. It consist in two classes `Grid` and `Cell` organized in the `GameOfLife.Model` namespace (/js/gridModel.js file).
 
-The `Grid` class implements the logic for constructing the grid and handles the process of computing new generations. It exposes a method called `nextGeneration()` that publishes a notification to all the cells indicating that a new generation needs to be computed. 
+The `Grid` class implements the logic for constructing the grid and handles the process of computing new generations. It holds a collection of cells and exposes a method called `nextGeneration()` that publishes a notification to them indicating that a new generation needs to be computed. 
 
-The `Cell` class handles the state machine of a single cell, it also implements the rule to compute the cell status for the next generation. All cells are subscribed to the `nextGeneration` event published by the `Grid`, when they receive the message they compute the new status and if it differ from the previous status it notifies the `Grid` via the `cellUpdated` event. After that the `Grid` republishes the `cellUpdated` event to its subscribers (in this case the `GridController`).
+The `Cell` class handles the state machine of a single cell, it also implements the rule used to compute the cell status for the next generation. All cells are subscribed to the `nextGeneration` event published by the `Grid`, when they receive that event they compute the new status and if it differ from the previous status it notifies the `Grid` via the `cellUpdated` event. After that the `Grid` republishes the `cellUpdated` event to its subscribers (in this case the `GridController`).
 
 #### Controller
 The handles the interaction between the UI and the Model. It consist in a single class named `GridController` exported by the `GameOfLife.Controller` namespace (/js/gridController.js file).
 
-The `GridController` class manages an instance of the `Grid` class and handles the flow of the application according to the user interaction.
+The `GridController` class manages an instance of the `Grid` class and handles the flow of the application according to the user interaction. It receives the `cellUpdated` event published by the `Grid` model to apply changes in the UI when the status of a cell is changed. It also indicates to the model when a UI cell was clicked.
+
+The controller also is in charge of retrieving and storing the grid status to/from the browser LocalStorage. The status of the grid is saved to LocalStorage each time the user clicks on a cell in the UI or when the user clicks the Stop button. The status is retrieved from LocalStorage during the page initialization.
 
 #### View
-The view is implemented in a single HTML file (GameOfLife.html), using HTML5 markup and visual styles provided by Twitter Bootstrap. The grid is created dynamically at startup using Tempo.js HTML templating library out of a JSON object containing the grid structure. After that, all the changes to the status of the cells are made through jQuery assigning dynamic css styles.
+The view is implemented in a single HTML file (GameOfLife.html), using HTML5 markup and visual styles provided by Twitter Bootstrap. The grid is created dynamically at startup using Tempo.js HTML templating library out of a JSON object containing the grid structure. After that, all the changes to the status of the UI cells are made by the controller through jQuery (assigning css styles dynamically).
 
 #### Tests
 The classes `Grid` and `Cell` which implement the logic of the game were coded using test driven development with QUnit as unit testing framework.
+
+There were implemented tests for creating the structure of the grid, it cells, and the relation between them, and also for the validation of known Game Of Life patterns (or lifeforms) such as Blinker, Block, Glider and Beacon.
 
 ### Online Demo
  * [Game Of Life](http://gameoflife-1.apphb.com/GameOfLife.html) demo
