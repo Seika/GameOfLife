@@ -7,7 +7,7 @@ Overview
 This is a sample implementation of Conway's Game Of Life cellular automata written in JavaScript language. The code was created having the following premises in mind:
 
  * Separate presentation from the game logic (i.e. allowing the reuse of the logic with a different user interface)
- * Avoid processing the cell sequentially
+ * Avoid processing cells sequentially using async programming techniques
  * Showcase the use of different technologies: UI templating, Async programming, Code modularization, TDD, simple MVC pattern, code [linting][2]
 
 High level design
