@@ -8,7 +8,7 @@
 	
 			$.when(
 				$.ajax({
-					url: "test/.jshintrc",
+					url: "test/jshintconfig.json",
 					dataType: "json"
 				}),
 				$.ajax({
