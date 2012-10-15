@@ -17,25 +17,32 @@
  		<link href="css/styles.css" rel="stylesheet">
  	</head>
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container-fluid">
-					<div class="brand">Game Of Life</div>
-					<div class="nav-collapse collapse">
-			            <p class="navbar-text pull-right">
-			              a JavaScript implementation by Alejo Fernandez
-			            </p>
-			        </div>
-				</div>
-			</div>
-		</div>
+	    <header class="navbar navbar-inverse navbar-fixed-top">
+	        <div class="header navbar-inner">
+	           <span class="brand">Game Of Life</span><span class="navbar-text pull-right">a JavaScript implementation by Alejo Fernandez</span>
+	        </div>
+	    </header>
 
 		<div class="container-fluid" id="gridContainer">
 			<div class="row spacer">						
-				<div class="span7">
+				<div class="span4">
 					<button class="btn btn-primary" id="startButton" type="button">Start</button>
 					<button class="btn btn-primary" id="stopButton" type="button">Stop</button>
 					<button class="btn btn-primary" id="resetButton" type="button">Reset</button>
+    			</div>
+    			<div class="span3">
+    				<div class="btn-group">
+    					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    					    Patterns
+                            <span class="caret">
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" id="pulsarPatternButton">Pulsar</a></li>
+                            <li><a href="#" id="gliderPatternButton">Glider</a></li>
+                            <li><a href="#" id="lwssPatternButton">Lightweight spaceship</a></li>
+                        </ul>
+                    </div>
 				</div>
 				<div class="span1">
 					<span class="label label-inverse">Generation:&nbsp;&nbsp;<em id="generationLabel">0</em></span>
@@ -43,7 +50,8 @@
 			</div>				
 			<div class="row cellrow" data-template>
 				<div class="span9">
-					<div class="cell" data-template="cells" data-cellid="{{id}}">&nbsp;</div>
+					<div class="cell" data-template="cells" data-cellid="{{id}}">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -52,26 +60,21 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
 		<script type="text/javascript" src="ext/bootstrap/js/bootstrap.js"></script> 
 		<script type="text/javascript" src="ext/mediator/mediator.js"></script>
-		<script type="text/javascript" src="ext/tempo/tempo.js"></script> 
+		<script type="text/javascript" src="ext/tempo/tempo.js"></script>
 		<script type="text/javascript" src="ext/namespace/namespace.js"></script>
 		<script type="text/javascript" src="js/gridModel.js"></script>
 		<script type="text/javascript" src="js/gridController.js"></script>
+		<script type="text/javascript" src="js/patterns.js"></script>
 		
 		<script type="text/javascript" charset="utf-8">
 			jQuery(document).ready(function() {
-				var width = 25,
-					height = 25,
-					gridController,
-					gridData;
+				var width = 25, height = 25, gridController;
 				
 				jQuery.noConflict();
 				
 				gridController = new GameOfLife.Controllers.GridController(width, height, 200, '#gridContainer');
-				gridData = gridController.exportData();
-				
-				Tempo.prepare('gridContainer').render(gridData);
-				
 				gridController.initializeControls();
+				gridController.initializeModel();
 			});
 		</script>
 	</body>

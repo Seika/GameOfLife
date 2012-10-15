@@ -23,10 +23,16 @@
 }
 
 #startButton, #stopButton, #resetButton {
-	width: 80px;
+	width: 85px;
 }
 
 #gridContainer {
 	width: 650px; 
 	margin: 0 auto;
+	display: hidden;
+}
+
+.header {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }

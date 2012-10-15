@@ -1,0 +1,75 @@
+$namespace('GameOfLife.Patterns', function () {
+    return {
+        pulsar:[
+            {"x":4,"y":7,"status":"alive"},
+            {"x":4,"y":8,"status":"alive"},
+            {"x":4,"y":9,"status":"alive"},
+            {"x":4,"y":13,"status":"alive"},
+            {"x":4,"y":14,"status":"alive"},
+            {"x":4,"y":15,"status":"alive"},
+            {"x":6,"y":5,"status":"alive"},
+            {"x":6,"y":10,"status":"alive"},
+            {"x":6,"y":12,"status":"alive"},
+            {"x":6,"y":17,"status":"alive"},
+            {"x":7,"y":5,"status":"alive"},
+            {"x":7,"y":10,"status":"alive"},
+            {"x":7,"y":12,"status":"alive"},
+            {"x":7,"y":17,"status":"alive"},
+            {"x":8,"y":5,"status":"alive"},
+            {"x":8,"y":10,"status":"alive"},
+            {"x":8,"y":12,"status":"alive"},
+            {"x":8,"y":17,"status":"alive"},
+            {"x":9,"y":7,"status":"alive"},
+            {"x":9,"y":8,"status":"alive"},
+            {"x":9,"y":9,"status":"alive"},
+            {"x":9,"y":13,"status":"alive"},
+            {"x":9,"y":14,"status":"alive"},
+            {"x":9,"y":15,"status":"alive"},
+            {"x":11,"y":7,"status":"alive"},
+            {"x":11,"y":8,"status":"alive"},
+            {"x":11,"y":9,"status":"alive"},
+            {"x":11,"y":13,"status":"alive"},
+            {"x":11,"y":14,"status":"alive"},
+            {"x":11,"y":15,"status":"alive"},
+            {"x":12,"y":5,"status":"alive"},
+            {"x":12,"y":10,"status":"alive"},
+            {"x":12,"y":12,"status":"alive"},
+            {"x":12,"y":17,"status":"alive"},
+            {"x":13,"y":5,"status":"alive"},
+            {"x":13,"y":10,"status":"alive"},
+            {"x":13,"y":12,"status":"alive"},
+            {"x":13,"y":17,"status":"alive"},
+            {"x":14,"y":5,"status":"alive"},
+            {"x":14,"y":10,"status":"alive"},
+            {"x":14,"y":12,"status":"alive"},
+            {"x":14,"y":17,"status":"alive"},
+            {"x":16,"y":7,"status":"alive"},
+            {"x":16,"y":8,"status":"alive"},
+            {"x":16,"y":9,"status":"alive"},
+            {"x":16,"y":13,"status":"alive"},
+            {"x":16,"y":14,"status":"alive"},
+            {"x":16,"y":15,"status":"alive"}
+        ],
+        
+        glider: [
+            {"x":0,"y":2,"status":"alive"},
+            {"x":1,"y":3,"status":"alive"},
+            {"x":2,"y":1,"status":"alive"},
+            {"x":2,"y":2,"status":"alive"},
+            {"x":2,"y":3,"status":"alive"}
+        ],
+        
+        lwss: [
+            {"x":7,"y":2,"status":"alive"},
+            {"x":7,"y":5,"status":"alive"},
+            {"x":8,"y":6,"status":"alive"},
+            {"x":9,"y":2,"status":"alive"},
+            {"x":9,"y":6,"status":"alive"},
+            {"x":10,"y":3,"status":"alive"},
+            {"x":10,"y":4,"status":"alive"},
+            {"x":10,"y":5,"status":"alive"},
+            {"x":10,"y":6,"status":"alive"}
+        ]
+    }
+    
+}());
