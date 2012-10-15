@@ -46,8 +46,8 @@ The view is implemented in a single HTML file (GameOfLife.html), using HTML5 mar
 The classes `Grid` and `Cell` which implement the logic of the game were coded using test driven development with QUnit as unit testing framework.
 
 ### Online Demo
- * [Game Of Life]() demo
- * [Unit tests & code linter]()
+ * [Game Of Life](http://gameoflife-1.apphb.com/GameOfLife.html) demo
+ * [Unit tests & code linter](http://gameoflife-1.apphb.com/tests.html)
 
   [1]: http://twitter.com/djseika
   [2]: http://en.wikipedia.org/wiki/Lint_%28software%29
